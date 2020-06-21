@@ -11,7 +11,7 @@
 }
 .header-right-list{
     display: flex;
-    margin: 0 73px 0 0;
+    margin: 0;
     padding-inline-start: 0;
     flex-direction: row;
     justify-content: space-between;
