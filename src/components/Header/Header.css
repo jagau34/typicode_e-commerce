@@ -1,0 +1,24 @@
+.menu-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-width: 300px;
+    padding: 22px 0;
+}
+.site-logo {
+    width: 132px;
+    height: 24px;
+}
+.header-right-list{
+    display: flex;
+    margin: 0 73px 0 0;
+    padding-inline-start: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+}
+.header-right-icon {
+    width: 16px;
+    height: 16px;
+    padding: 6px 9px;
+}
