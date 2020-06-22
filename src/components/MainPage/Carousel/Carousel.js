@@ -7,7 +7,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import './Carousel.css';
 
 const Carousel = () => (
-    <div className='carousel-container'>
     <ResponsiveCarousel autoPlay renderThumbs={() =>false}>
         <div className='image-container'>
             <img className='image' src={image1} alt=""/>
@@ -22,7 +21,6 @@ const Carousel = () => (
             <h1 className="legend">Select Your new perfect style</h1>
         </div>
     </ResponsiveCarousel>
-    </div>
 )
 
 export default Carousel;
