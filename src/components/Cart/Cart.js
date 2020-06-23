@@ -4,18 +4,37 @@ import { connect } from 'react-redux';
 import * as productsActions from '../../actions/productsAction';
 import img from '../../assets/about_hero.png';
 import './Cart.css';
+import CartProduct from './CartProduct/CartProduct';
 
 class Cart extends Component {
     componentDidMount = () => {
         if (!this.props.cartReducer.products.length) return;
         this.props.productsActions.getListByIds(this.props.cartReducer.products);
     }
+
+    removeProductFromCart = (productId) => {
+        this.props.productsActions.remove(productId);
+    }
     render() {
-        return <div className='cart-header-container'>
-            <h1 className='cart-title'>Cart List</h1>
-            <img src={img} className='cart-header-image' />
-            
-        </div>
+        const { productDatas } = this.props.cartReducer
+        const cartHeader = (
+            <div className='cart-header-container'>
+                <h1 className='cart-title'>Cart List</h1>
+                <img src={img} className='cart-header-image' />
+            </div>
+        )
+
+        const productList = productDatas.map((product) => {
+            return <CartProduct data={product} removeProductFromCart={this.removeProductFromCart} />
+        })
+        return (
+            <div>
+                {cartHeader}
+                <table className='table-container'>
+                        {productList}
+                </table>
+            </div>
+        )
     }
 }
 

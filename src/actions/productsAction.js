@@ -62,3 +62,20 @@ export const add = (id) => (dispatch, getState) => {
         results: products
     })
 }
+
+export const remove = (id) => (dispatch, getState) => {
+    let products = [...getState().cartReducer.products];
+    let productDatas = [...getState().cartReducer.productDatas];
+    const index = products.indexOf(id);
+    if (index === -1)
+        return;
+    products = products.filter(productId => productId !== id);
+    productDatas = productDatas.filter(product => product.id !== id);
+    return dispatch({
+        type: rc.PRODUCT_REMOVED,
+        results: {
+            products,
+            productDatas
+        }
+    })
+}

@@ -13,6 +13,14 @@ const cartReducer = (state = {...initialState}, action) => {
                 ...state,
                 products: [...action.results]
             }
+        case rc.PRODUCT_REMOVED: {
+            const { products, productDatas } = action.results;
+            return {
+                ...state,
+                products,
+                productDatas
+            }
+        }
             case rc.PRODUCT_LIST_SUCCESS:
             return {
                 ...state,

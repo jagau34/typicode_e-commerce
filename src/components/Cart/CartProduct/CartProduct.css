@@ -1,0 +1,15 @@
+.cart-product-container{
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart-product-image{
+    max-height: 70%;
+    max-width: 140px;
+}
+
+.cart-product-title-container{
+    text-align: start;
+}
