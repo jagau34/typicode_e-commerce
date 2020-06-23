@@ -1,0 +1,18 @@
+.cart-header-image{
+    height: 500px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.cart-title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+
+.cart-header-container{
+    position: relative;
+    text-align: center;
+}

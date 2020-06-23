@@ -1,7 +1,8 @@
 import rc from '../constants/redux-constant';
 
 const initialState = {
-    products: []
+    products: [],
+    productDatas: []
 }
 
 
@@ -11,6 +12,11 @@ const cartReducer = (state = {...initialState}, action) => {
             return {
                 ...state,
                 products: [...action.results]
+            }
+            case rc.PRODUCT_LIST_SUCCESS:
+            return {
+                ...state,
+                productDatas: [...action.results]
             }
         default: return { ...state }
     }

@@ -1,11 +1,5 @@
 import rc from '../constants/redux-constant';
 
-export const getListAction = (results) => ({
-    type: rc.PRODUCTS_SUCCESS,
-    results
-})
-
-
 export const getList = (page = 0, size = 15) => (dispatch, getState) => {
     return fetch(`http://localhost:3000/products?_page=${page}&_limit=${size}`)
         .then(
@@ -18,7 +12,30 @@ export const getList = (page = 0, size = 15) => (dispatch, getState) => {
                 currentPage: page,
                 pageSize: size
             }
-            dispatch(getListAction(res))
+            dispatch({
+                type: rc.PRODUCTS_SUCCESS,
+                results: res
+            })
+        }
+        )
+}
+
+export const getListByIds = (ids) => (dispatch, getState) => {
+    let searchResquest = ''
+    ids.map(id => {
+        searchResquest = searchResquest.length ? `${searchResquest}&id=${id}` : `?id=${id}`
+    })
+
+    console.log(searchResquest);
+    return fetch(`http://localhost:3000/products${searchResquest}`)
+        .then(
+            response => response.json()
+        )
+        .then(async (json) => {
+            dispatch({
+                type: rc.PRODUCT_LIST_SUCCESS,
+                results: json
+            })
         }
         )
 }
