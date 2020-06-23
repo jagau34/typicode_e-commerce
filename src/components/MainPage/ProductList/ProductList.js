@@ -13,15 +13,18 @@ class ProductList extends PureComponent {
     }
 
     onPageChange = async(page) => {
-        await this.props.productsActions.getList(page.selected, 15)
+        await this.props.productsActions.getList(page.selected + 1, 15)
      }
 
-    //TODO: /products?_page=3&_limit=15
+    addProductToCart = async(productId) => {
+        await this.props.productsActions.add(productId);
+    }
+
     render() {
         const { products, totalElements } = this.props.productsReducer
         if (!products.length) return <div />;
         const productList = products.map((product) => {
-            return <Product data={product} key={product.id} />
+            return <Product data={product} addProductToCart={this.addProductToCart} key={product.id} />
         })
         const totalPage = Math.ceil(totalElements / 15);
         const reactPaginate = (
