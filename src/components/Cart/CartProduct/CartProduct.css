@@ -1,0 +1,31 @@
+.cart-product-container{
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart-product-image{
+    max-height: 70%;
+    max-width: 140px;
+}
+
+.cart-product-title-container{
+    text-align: start;
+}
+
+.remove-cart{
+    border-radius: 10px;
+    border-color: rgb(43, 43, 43);
+    background-color: rgb(255, 255, 255);
+    border-style: solid;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    
+}
+.remove-cart:hover{
+    cursor: pointer;
+    color: rgb(74, 172, 187);
+    border-color:  rgb(74, 172, 187);
+}

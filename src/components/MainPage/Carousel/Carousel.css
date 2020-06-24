@@ -1,0 +1,31 @@
+.carousel-container{
+    height: 300px;
+}
+
+.image-container{
+    min-height: 300px;
+    height: 300px;
+}
+
+.image{
+    height: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 300px){
+    .image-container{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 640px ) and (max-width: 1000px){
+    .image-container{
+        height: 400px;
+    }
+}
+
+@media screen and (min-width: 1000px ){
+    .image-container{
+        height: 500px;
+    }
+}
