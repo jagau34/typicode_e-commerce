@@ -34,10 +34,14 @@
     text-align: center;
     border-radius: 10px;
     font-size: 0.7em;
+    border-color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+    border-style: solid;
 }
 .add-cart:hover{
     cursor: pointer;
-    color: rgb(255, 255, 255);
+    color: rgb(74, 172, 187);
+    border-color:  rgb(74, 172, 187);
 }
 
 
