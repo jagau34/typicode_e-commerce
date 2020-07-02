@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import cart from '../../assets/cart.svg';
-import search from '../../assets/search.svg';
 import logo from '../../assets/logo.svg';
 import './Header.css';
 import { connect } from 'react-redux';

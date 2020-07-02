@@ -26,8 +26,6 @@ export const getListByIds = (ids) => (dispatch, getState) => {
         searchResquest = searchResquest.length ? `${searchResquest}&id=${id}` : `?id=${id}`;
         return id;
     })
-
-    console.log(searchResquest);
     return fetch(`http://localhost:3000/products${searchResquest}`)
         .then(
             response => response.json()

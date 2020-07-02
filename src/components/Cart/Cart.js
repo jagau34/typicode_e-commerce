@@ -26,14 +26,16 @@ class Cart extends Component {
         let productList = [];
         productList = productDatas.map((product, index) => {
             if (!index)
-                return <div className='first-cart-product'><CartProduct data={product} removeProductFromCart={this.removeProductFromCart} /></div>
-            return <div className='cart-product'><CartProduct data={product} removeProductFromCart={this.removeProductFromCart} /></div>
+                return <CartProduct key={product.id} class='first-cart-product' data={product} removeProductFromCart={this.removeProductFromCart} />
+            return <CartProduct key={product.id} data={product} class='cart-product' removeProductFromCart={this.removeProductFromCart} />
         })
         return (
             <div>
                 {cartHeader}
                 <table className='table-container'>
-                    {productList}
+                    <tbody>
+                        {productList}
+                    </tbody>
                 </table>
             </div>
         )

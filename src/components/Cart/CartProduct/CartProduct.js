@@ -3,7 +3,7 @@ import './CartProduct.css';
 
 const CartProduct = (props) => {
     return (
-        <tr className='cart-product-container'>
+        <tr className={`cart-product-container ${props.class}`}>
             <td>
                 <img className='cart-product-image' src={props.data.url} alt="" />
             </td>
