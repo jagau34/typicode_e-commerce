@@ -19,11 +19,6 @@ const HeaderRight = (props) => {
     return (
         <div className="header-right">
             <ul className="header-right-list">
-                <li>
-                    <div className="nav-search search-switch">
-                        <img className='header-right-icon-search' src={search} alt="" />
-                    </div>
-                </li>
                 <li><Link className='header-cart-container' to="/cart">{numberProductInCart}<img className='header-right-icon-cart' src={cart} alt="" /></Link> </li>
             </ul>
         </div>

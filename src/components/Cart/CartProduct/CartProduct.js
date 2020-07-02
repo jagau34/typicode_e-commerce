@@ -15,7 +15,7 @@ const CartProduct = (props) => {
                     type='button'
                     className='remove-cart'
                     onClick={() => props.removeProductFromCart(props.data.id)}
-                    value='remove to Cart' />
+                    value='Remove to cart' />
             </td>
         </tr>
     )
