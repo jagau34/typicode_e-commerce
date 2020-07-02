@@ -20,12 +20,12 @@ class Cart extends Component {
         const cartHeader = (
             <div className='cart-header-container'>
                 <h1 className='cart-title'>Cart List</h1>
-                <img src={img} className='cart-header-image' />
+                <img src={img} className='cart-header-image' alt='cart' />
             </div>
         )
 
         const productList = productDatas.map((product) => {
-            return <CartProduct data={product} removeProductFromCart={this.removeProductFromCart} />
+            return <div className='table-row'><CartProduct data={product} removeProductFromCart={this.removeProductFromCart} /></div>
         })
         return (
             <div>

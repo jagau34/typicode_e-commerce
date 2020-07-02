@@ -23,7 +23,8 @@ export const getList = (page = 0, size = 15) => (dispatch, getState) => {
 export const getListByIds = (ids) => (dispatch, getState) => {
     let searchResquest = ''
     ids.map(id => {
-        searchResquest = searchResquest.length ? `${searchResquest}&id=${id}` : `?id=${id}`
+        searchResquest = searchResquest.length ? `${searchResquest}&id=${id}` : `?id=${id}`;
+        return id;
     })
 
     console.log(searchResquest);
